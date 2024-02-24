@@ -1,1 +1,10 @@
-<h1><?php echo __FILE__; ?></h1>
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <form action="{{ url('/empleado') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @include('empleado.form', ['modo' => 'Crear'])
+    </form>
+    <a href="{{ url('empleado/') }}">Regresar</a>
+</div>
+@endsection
